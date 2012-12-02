@@ -1,0 +1,18 @@
+##  Plugin Information  ##
+name: dejiplus
+version: version-number-unknown
+main: syam.dejiplus.Dejiplus
+description: Minecraft dejiplus server plugin
+website: http://www.dejiplus.net/
+softdepend: [Vault]
+##  Original Author     ##
+author: syam
+commands:
+    dejiplus:
+      usage: /dejiplus - to see the help
+      aliases: [deji]
+      description: To see the plugin help.
+permissions:
+    dejiplus.admin:
+        default: op
+        description: Give to server admins
