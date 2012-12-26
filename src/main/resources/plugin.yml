@@ -1,7 +1,7 @@
 ##  Plugin Information  ##
 name: dejiplus
 version: version-number-unknown
-main: syam.dejiplus.Dejiplus
+main: net.syamn.dejiplus.Dejiplus
 description: Minecraft dejiplus server plugin
 website: http://www.dejiplus.net/
 softdepend: [Vault]

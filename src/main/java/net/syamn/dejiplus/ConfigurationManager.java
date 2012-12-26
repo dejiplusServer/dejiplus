@@ -1,14 +1,15 @@
 /**
- * dejiplus - Package: syam.dejiplus Created: 2012/12/03 2:31:22
+ * dejiplus - Package: net.syamn.dejiplus Created: 2012/12/03 2:31:22
  */
-package syam.dejiplus;
+package net.syamn.dejiplus;
 
 import java.io.File;
 import java.util.logging.Logger;
 
+import net.syamn.dejiplus.util.FileStructure;
+
 import org.bukkit.configuration.file.FileConfiguration;
 
-import syam.dejiplus.util.FileStructure;
 
 /**
  * ConfigurationManager (ConfigurationManager.java)

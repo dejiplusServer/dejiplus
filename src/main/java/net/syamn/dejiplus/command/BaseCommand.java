@@ -1,18 +1,19 @@
 /**
- * dejiplus - Package: syam.dejiplus.command Created: 2012/12/03 2:39:51
+ * dejiplus - Package: net.syamn.dejiplus.command Created: 2012/12/03 2:39:51
  */
-package syam.dejiplus.command;
+package net.syamn.dejiplus.command;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import net.syamn.dejiplus.ConfigurationManager;
+import net.syamn.dejiplus.Dejiplus;
+import net.syamn.dejiplus.exception.CommandException;
+import net.syamn.dejiplus.util.Actions;
+
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import syam.dejiplus.ConfigurationManager;
-import syam.dejiplus.Dejiplus;
-import syam.dejiplus.exception.CommandException;
-import syam.dejiplus.util.Actions;
 
 /**
  * BaseCommand (BaseCommand.java)

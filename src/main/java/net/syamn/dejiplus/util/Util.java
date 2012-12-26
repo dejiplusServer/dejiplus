@@ -1,7 +1,7 @@
 /**
- * dejiplus - Package: syam.dejiplus.util Created: 2012/12/03 2:40:33
+ * dejiplus - Package: net.syamn.dejiplus.util Created: 2012/12/03 2:40:33
  */
-package syam.dejiplus.util;
+package net.syamn.dejiplus.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Collection;

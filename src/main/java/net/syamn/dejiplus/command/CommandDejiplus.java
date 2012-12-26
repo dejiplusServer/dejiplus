@@ -1,13 +1,14 @@
 /**
- * dejiplus - Package: syam.dejiplus.command Created: 2012/12/03 2:47:08
+ * dejiplus - Package: net.syamn.dejiplus.command Created: 2012/12/03 2:47:08
  */
-package syam.dejiplus.command;
+package net.syamn.dejiplus.command;
+
+import net.syamn.dejiplus.Perms;
+import net.syamn.dejiplus.exception.CommandException;
+import net.syamn.dejiplus.util.Actions;
 
 import org.bukkit.command.CommandSender;
 
-import syam.dejiplus.Perms;
-import syam.dejiplus.exception.CommandException;
-import syam.dejiplus.util.Actions;
 
 /**
  * CommandDejiplus (CommandDejiplus.java)

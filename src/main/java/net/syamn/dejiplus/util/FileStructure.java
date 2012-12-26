@@ -1,7 +1,7 @@
 /**
- * dejiplus - Package: syam.dejiplus.util Created: 2012/12/03 2:29:53
+ * dejiplus - Package: net.syamn.dejiplus.util Created: 2012/12/03 2:29:53
  */
-package syam.dejiplus.util;
+package net.syamn.dejiplus.util;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -17,7 +17,8 @@ import java.net.URLConnection;
 import java.nio.channels.FileChannel;
 import java.util.logging.Logger;
 
-import syam.dejiplus.Dejiplus;
+import net.syamn.dejiplus.Dejiplus;
+
 
 /**
  * FileStructure (FileStructure.java)

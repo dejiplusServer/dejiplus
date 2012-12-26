@@ -1,20 +1,21 @@
 /**
- * dejiplus - Package: syam.dejiplus.command Created: 2012/12/03 2:49:50
+ * dejiplus - Package: net.syamn.dejiplus.command Created: 2012/12/03 2:49:50
  */
-package syam.dejiplus.command;
+package net.syamn.dejiplus.command;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import net.syamn.dejiplus.Dejiplus;
+import net.syamn.dejiplus.util.Actions;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 
-import syam.dejiplus.Dejiplus;
-import syam.dejiplus.util.Actions;
 
 /**
  * DejiplusCommandHandler (DejiplusCommandHandler.java)

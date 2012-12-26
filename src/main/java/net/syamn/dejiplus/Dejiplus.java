@@ -1,12 +1,17 @@
 /**
- * dejiplus - Package: syam.dejiplus Created: 2012/12/03 2:24:51
+ * dejiplus - Package: net.syamn.dejiplus Created: 2012/12/03 2:24:51
  */
-package syam.dejiplus;
+package net.syamn.dejiplus;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+
+import net.syamn.dejiplus.command.BaseCommand;
+import net.syamn.dejiplus.command.CommandDejiplus;
+import net.syamn.dejiplus.command.DejiplusCommandHandler;
+import net.syamn.dejiplus.util.Metrics;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -14,10 +19,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import syam.dejiplus.command.BaseCommand;
-import syam.dejiplus.command.CommandDejiplus;
-import syam.dejiplus.command.DejiplusCommandHandler;
-import syam.dejiplus.util.Metrics;
 
 /**
  * Dejiplus (Dejiplus.java)

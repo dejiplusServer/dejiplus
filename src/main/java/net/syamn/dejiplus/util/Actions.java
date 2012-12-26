@@ -1,7 +1,7 @@
 /**
- * dejiplus - Package: syam.dejiplus.util Created: 2012/12/03 2:40:50
+ * dejiplus - Package: net.syamn.dejiplus.util Created: 2012/12/03 2:40:50
  */
-package syam.dejiplus.util;
+package net.syamn.dejiplus.util;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -10,6 +10,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
+
+import net.syamn.dejiplus.Dejiplus;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -21,7 +23,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
-import syam.dejiplus.Dejiplus;
 
 /**
  * Actions (Actions.java)

@@ -1,7 +1,7 @@
 /**
- * dejiplus - Package: syam.dejiplus.exception Created: 2012/12/03 2:38:30
+ * dejiplus - Package: net.syamn.dejiplus.exception Created: 2012/12/03 2:38:30
  */
-package syam.dejiplus.exception;
+package net.syamn.dejiplus.exception;
 
 /**
  * CommandException (CommandException.java)

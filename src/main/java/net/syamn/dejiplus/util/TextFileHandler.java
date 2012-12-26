@@ -1,7 +1,7 @@
 /**
- * dejiplus - Package: syam.dejiplus.util Created: 2012/12/03 2:33:07
+ * dejiplus - Package: net.syamn.dejiplus.util Created: 2012/12/03 2:33:07
  */
-package syam.dejiplus.util;
+package net.syamn.dejiplus.util;
 
 import java.io.BufferedReader;
 import java.io.File;

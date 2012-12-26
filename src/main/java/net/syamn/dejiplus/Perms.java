@@ -1,7 +1,7 @@
 /**
- * dejiplus - Package: syam.dejiplus Created: 2012/12/03 2:36:49
+ * dejiplus - Package: net.syamn.dejiplus Created: 2012/12/03 2:36:49
  */
-package syam.dejiplus;
+package net.syamn.dejiplus;
 
 import org.bukkit.permissions.Permissible;
 
