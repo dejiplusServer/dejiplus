@@ -4,11 +4,11 @@
 package net.syamn.dejiplus.command;
 
 import net.syamn.dejiplus.Perms;
+import net.syamn.utils.LogUtil;
 import net.syamn.utils.Util;
 import net.syamn.utils.exception.CommandException;
 
 import org.bukkit.command.CommandSender;
-
 
 /**
  * CommandDejiplus (CommandDejiplus.java)
@@ -23,13 +23,34 @@ public class CommandDejiplus extends BaseCommand {
         usage = "<- dejiplus information";
     }
 
+    private void sendHelp(){
+        
+    }
+    
     @Override
     public void execute() throws CommandException {
-        Util.message(sender, "&bYay, this is test command!");
+        // reload
+        if (args.get(0).equalsIgnoreCase("reload")) {
+            if (!Perms.RELOAD.has(sender)){
+                Util.message(sender, "&cPermission Denied!");
+                return;
+            }
+            try {
+                plugin.getConfigs().loadConfig(false);
+            } catch (Exception ex) {
+                LogUtil.warning("an error occured while trying to load the config file.");
+                ex.printStackTrace();
+                return;
+            }
+            Util.message(sender, "&aConfiguration reloaded!");
+            return;
+        }
+        
+        sendHelp();
     }
 
     @Override
     public boolean permission(CommandSender sender) {
-        return Perms.ADMIN.has(sender);
+        return true;
     }
 }

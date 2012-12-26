@@ -16,8 +16,8 @@ public enum Perms {
     SPAWNER_DROP("user.dropspawner"),
     
     // Admin Permission
-    ADMIN("admin"),
-
+    RELOAD("admin.reload"),
+    
     ;
 
     // ノードヘッダー
