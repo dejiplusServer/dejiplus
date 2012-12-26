@@ -30,7 +30,12 @@ public class CommandDejiplus extends BaseCommand {
     }
 
     private void sendHelp(){
-        
+        Util.message(sender, "&c===================================");
+        Util.message(sender, "&bdejiplus Plugin version &3" + plugin.getDescription().getVersion());
+        Util.message(sender, " &b<>&f = required, &b[]&f = option");
+        Util.message(sender, " /dejiplus item <action> [args] &7- edit item meta");
+        Util.message(sender, " /dejiplus reload &7- reload configuration");
+        Util.message(sender, "&c===================================");
     }
     
     @Override
