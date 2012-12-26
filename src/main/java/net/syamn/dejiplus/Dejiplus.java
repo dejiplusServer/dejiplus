@@ -11,7 +11,8 @@ import java.util.logging.Logger;
 import net.syamn.dejiplus.command.BaseCommand;
 import net.syamn.dejiplus.command.CommandDejiplus;
 import net.syamn.dejiplus.command.DejiplusCommandHandler;
-import net.syamn.dejiplus.util.Metrics;
+import net.syamn.utils.LogUtil;
+import net.syamn.utils.Metrics;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -58,6 +59,7 @@ public class Dejiplus extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        LogUtil.init(this);
 
         PluginManager pm = getServer().getPluginManager();
         config = new ConfigurationManager(this);

@@ -4,8 +4,8 @@
 package net.syamn.dejiplus.command;
 
 import net.syamn.dejiplus.Perms;
-import net.syamn.dejiplus.exception.CommandException;
-import net.syamn.dejiplus.util.Actions;
+import net.syamn.utils.Util;
+import net.syamn.utils.exception.CommandException;
 
 import org.bukkit.command.CommandSender;
 
@@ -25,7 +25,7 @@ public class CommandDejiplus extends BaseCommand {
 
     @Override
     public void execute() throws CommandException {
-        Actions.message(sender, "&bYay, this is test command!");
+        Util.message(sender, "&bYay, this is test command!");
     }
 
     @Override

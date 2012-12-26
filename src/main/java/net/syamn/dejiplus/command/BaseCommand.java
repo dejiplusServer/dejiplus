@@ -8,9 +8,9 @@ import java.util.List;
 
 import net.syamn.dejiplus.ConfigurationManager;
 import net.syamn.dejiplus.Dejiplus;
-import net.syamn.dejiplus.exception.CommandException;
-import net.syamn.dejiplus.util.Actions;
+import net.syamn.utils.Util;
 
+import net.syamn.utils.exception.CommandException;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -46,7 +46,7 @@ public abstract class BaseCommand {
     public boolean run(final Dejiplus plugin, final CommandSender sender,
             final String cmd, final String[] preArgs) {
         if (name == null) {
-            Actions.message(sender, "&cThis command not loaded properly!");
+            Util.message(sender, "&cThis command not loaded properly!");
             return true;
         }
 
@@ -70,7 +70,7 @@ public abstract class BaseCommand {
 
         // Check sender is player
         if (bePlayer && !(sender instanceof Player)) {
-            Actions.message(sender, "&cコンソールからは実行できません！");
+            Util.message(sender, "&cコンソールからは実行できません！");
             return true;
         }
         if (sender instanceof Player) {
@@ -81,7 +81,7 @@ public abstract class BaseCommand {
 
         // Check permission
         if (!permission(sender)) {
-            Actions.message(sender, "&c権限がありません！");
+            Util.message(sender, "&c権限がありません！");
             return true;
         }
 
@@ -91,7 +91,7 @@ public abstract class BaseCommand {
         } catch (CommandException ex) {
             Throwable error = ex;
             while (error instanceof Exception) {
-                Actions.message(sender, error.getMessage());
+                Util.message(sender, error.getMessage());
                 error = error.getCause();
             }
         }
@@ -133,6 +133,6 @@ public abstract class BaseCommand {
      * Send command usage
      */
     public void sendUsage() {
-        Actions.message(sender, "&c/" + this.command + " " + name + " " + usage);
+        Util.message(sender, "&c/" + this.command + " " + name + " " + usage);
     }
 }

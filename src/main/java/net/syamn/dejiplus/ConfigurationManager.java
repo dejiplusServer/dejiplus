@@ -6,7 +6,7 @@ package net.syamn.dejiplus;
 import java.io.File;
 import java.util.logging.Logger;
 
-import net.syamn.dejiplus.util.FileStructure;
+import net.syamn.utils.file.FileStructure;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -52,8 +52,7 @@ public class ConfigurationManager {
         // get config.yml path
         File file = new File(pluginDir, "config.yml");
         if (!file.exists()) {
-            FileStructure.extractResource("/config.yml", pluginDir, false,
-                    false);
+            FileStructure.extractResource("/config.yml", pluginDir, false, false, plugin);
             log.info("config.yml is not found! Created default config.yml!");
         }
 
@@ -88,8 +87,7 @@ public class ConfigurationManager {
             }
 
             // force copy config.yml and languages
-            FileStructure
-                    .extractResource("/config.yml", pluginDir, true, false);
+            FileStructure.extractResource("/config.yml", pluginDir, true, false, plugin);
             // Language.extractLanguageFile(true);
 
             plugin.reloadConfig();

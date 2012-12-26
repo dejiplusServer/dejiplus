@@ -223,7 +223,7 @@
       <dependency>
           <groupId>net.syamn</groupId>
           <artifactId>syamn-lib</artifactId>
-          <version>1.0.0</version>
+          <version>1.0.1</version>
       </dependency>
   </dependencies>
 

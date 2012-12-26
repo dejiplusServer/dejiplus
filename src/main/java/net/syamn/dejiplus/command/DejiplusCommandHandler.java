@@ -9,7 +9,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import net.syamn.dejiplus.Dejiplus;
-import net.syamn.dejiplus.util.Actions;
+import net.syamn.utils.Util;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -42,7 +42,7 @@ public class DejiplusCommandHandler implements TabExecutor {
                 .toLowerCase(Locale.ENGLISH);
         final BaseCommand cmd = commands.get(commandName);
         if (cmd == null) {
-            Actions.message(sender, ChatColor.RED
+            Util.message(sender, ChatColor.RED
                     + "This command not loaded properly!");
             return true;
         }
