@@ -17,7 +17,7 @@ public enum Perms {
     
     // Admin Permission
     RELOAD("admin.reload"),
-    
+    EDIT_ITEM("admin.edititem"),
     ;
 
     // ノードヘッダー
