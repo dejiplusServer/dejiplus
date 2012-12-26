@@ -12,7 +12,10 @@ import org.bukkit.permissions.Permissible;
  */
 public enum Perms {
     /* 権限ノード */
-    // User Commands
+    // User Permission
+    SPAWNER_DROP("user.dropspawner"),
+    
+    // Admin Permission
     ADMIN("admin"),
 
     ;

@@ -99,6 +99,11 @@ public class ConfigurationManager {
 
     /* ***** Begin Configuration Getters *********************** */
 
+    // Drop spawner
+    public boolean needsSilkEnchant(){
+        return conf.getBoolean("NeedsSilkEnchant", false);
+    }
+    
     // Debug
     public boolean isDebug() {
         return conf.getBoolean("Debug", false);

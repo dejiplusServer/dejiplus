@@ -3,6 +3,11 @@
 # github: https://github.com/dejiplusServer/dejiplus
 
 #==================#
+#   Drop Spawner   #
+#==================#
+NeedsSilkEnchant: false
+
+#==================#
 #   Debug Config   #
 #==================#
 Debug: false

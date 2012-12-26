@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import net.syamn.dejiplus.command.BaseCommand;
 import net.syamn.dejiplus.command.CommandDejiplus;
 import net.syamn.dejiplus.command.DejiplusCommandHandler;
+import net.syamn.dejiplus.listener.BlockListener;
 import net.syamn.utils.LogUtil;
 import net.syamn.utils.Metrics;
 
@@ -83,7 +84,7 @@ public class Dejiplus extends JavaPlugin {
         }
 
         // Regist Listeners
-        // pm.registerEvents(serverListener, this);
+        pm.registerEvents(new BlockListener(this), this);
 
         // コマンド登録
         cmdHandler = new DejiplusCommandHandler(this);
