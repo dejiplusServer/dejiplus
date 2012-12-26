@@ -45,7 +45,7 @@
   <!--
   <ciManagement>
       <system>jenkins</system>
-      <url>http://ci.sakura-server.net:8080/</url>
+      <url>http://ci.sakura-server.net/</url>
   </ciManagement>
   -->
 
@@ -132,6 +132,35 @@
                   </execution>
               </executions>
           </plugin>
+          <!-- Maven Shade -->
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-shade-plugin</artifactId>
+                  <version>1.6</version>
+                  <executions>
+                      <execution>
+                          <phase>package</phase>
+                          <goals>
+                              <goal>shade</goal>
+                          </goals>
+                          <configuration>
+                              <minimizeJar>true</minimizeJar>
+                              <filters>
+                                  <filter>
+                                      <artifact>net.syamn:syamn-lib</artifact>
+                                      <includes><include>**</include></includes>
+                                  </filter>
+                              </filters>
+                              <relocations>
+                                  <relocation>
+                                      <pattern>net.syamn.utils</pattern>
+                                      <shadedPattern>net.syamn.dejiplus.utils</shadedPattern>
+                                  </relocation>
+                              </relocations>
+                          </configuration>
+                      </execution>
+                  </executions>
+          </plugin>
       </plugins>
 
       <!-- Resources -->
@@ -169,15 +198,15 @@
           <id>Bukkit Official</id>
           <url>http://repo.bukkit.org/content/groups/public/</url>
       </repository>
-      <!-- Vault -->
-      <repository>
-          <id>Vault Repo</id>
-          <url>http://ci.herocraftonline.com/plugin/repository/everything</url>
-      </repository>
       <!-- WorldEdit -->
       <repository>
           <id>spout-repo</id>
           <url>http://nexus.spout.org/content/groups/public/</url>
+      </repository>
+      <!-- Sakura -->
+      <repository>
+          <id>Sakura Server</id>
+          <url>http://ci.sakura-server.net/plugin/repository/everything/</url>
       </repository>
   </repositories>
 
@@ -187,15 +216,14 @@
       <dependency>
           <groupId>org.bukkit</groupId>
           <artifactId>bukkit</artifactId>
-          <version>1.4.5-R0.3-SNAPSHOT</version>
+          <version>1.4.6-R0.1-SNAPSHOT</version>
           <scope>compile</scope>
       </dependency>
-      <!-- Vault Dependency -->
+      <!-- SakuraUtils Dependency -->
       <dependency>
-          <groupId>net.milkbowl.vault</groupId>
-          <artifactId>Vault</artifactId>
-          <version>1.2.20-SNAPSHOT</version>
-          <scope>compile</scope>
+          <groupId>net.syamn</groupId>
+          <artifactId>syamn-lib</artifactId>
+          <version>1.0.0</version>
       </dependency>
   </dependencies>
 
