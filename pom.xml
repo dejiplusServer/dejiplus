@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>syam.dejiplus</groupId>
   <artifactId>dejiplus</artifactId>
-  <version>0.0.1</version>
+  <version>0.1</version>
   <name>dejiplus</name>
   <description>Minecraft dejiplus server plugin</description>
 
