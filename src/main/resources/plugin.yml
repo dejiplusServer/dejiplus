@@ -13,6 +13,12 @@ commands:
       aliases: [deji]
       description: To see the plugin help.
 permissions:
-    dejiplus.admin:
+    dejiplus.user.dropspawner:
         default: op
-        description: Give to server admins
+        description: Can drop spawner
+    dejiplus.admin.edititem:
+        default: op
+        description: Can use item edit command
+    dejiplus.admin.reload:
+        default: op
+        description: Can use reload command
