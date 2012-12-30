@@ -7,6 +7,7 @@ package net.syamn.dejiplus.listener;
 import net.syamn.dejiplus.ConfigurationManager;
 import net.syamn.dejiplus.Dejiplus;
 import net.syamn.dejiplus.Perms;
+import net.syamn.utils.LogUtil;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -54,8 +55,13 @@ public class BlockListener implements Listener{
             default: return;
         }
         
-        final EntityType type = ((CreatureSpawner) block).getSpawnedType();
-        final ItemStack spawner = new ItemStack(Material.MOB_SPAWNER, 1, type.getTypeId());
+        final EntityType type = ((CreatureSpawner) block.getState()).getSpawnedType();
+        ItemStack spawner = new ItemStack(block.getType(), 1, type.getTypeId(), block.getData());
+        //spawner.setDurability(type.getTypeId());
         block.getWorld().dropItemNaturally(block.getLocation(), spawner);
+        
+        if (config.isDebug()){
+            LogUtil.info(event.getPlayer().getName() + " broke " + type.name() + "[" + type.getTypeId() + "] Spawner!");
+        }
     }
 }

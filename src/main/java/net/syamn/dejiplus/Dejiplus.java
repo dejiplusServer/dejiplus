@@ -38,7 +38,7 @@ public class Dejiplus extends JavaPlugin {
 
     // ** Commands **
     private DejiplusCommandHandler cmdHandler;
-    private List<BaseCommand> commands = new ArrayList<BaseCommand>();
+    //private List<BaseCommand> commands = new ArrayList<BaseCommand>();
 
     // ** Private Classes **
     private ConfigurationManager config;
@@ -128,7 +128,7 @@ public class Dejiplus extends JavaPlugin {
     private void registerCommands() {
         List<BaseCommand> cmds = new ArrayList<BaseCommand>();
 
-        commands.add(new CommandDejiplus());
+        cmds.add(new CommandDejiplus());
 
         for (final BaseCommand cmd : cmds) {
             cmdHandler.registerCommand(cmd);
@@ -181,15 +181,6 @@ public class Dejiplus extends JavaPlugin {
     }
 
     /* getter */
-    /**
-     * コマンドを返す
-     * 
-     * @return List<BaseCommand>
-     */
-    public List<BaseCommand> getCommands() {
-        return commands;
-    }
-
     /**
      * 設定マネージャを返す
      * 

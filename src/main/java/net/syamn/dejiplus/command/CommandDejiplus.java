@@ -40,6 +40,11 @@ public class CommandDejiplus extends BaseCommand {
     
     @Override
     public void execute() throws CommandException {
+        if (args.size() <= 0){
+            sendHelp();
+            return;
+        }
+        
         // reload
         if (args.get(0).equalsIgnoreCase("reload")) {
             if (!Perms.RELOAD.has(sender)){
@@ -75,7 +80,14 @@ public class CommandDejiplus extends BaseCommand {
             final String action = args.remove(0);
             
             if (action.equalsIgnoreCase("clear")){
-                meta.setLore(null);
+                if (args.size() > 0 && args.get(0).equalsIgnoreCase("name")){
+                    meta.setDisplayName(null);
+                }else if (args.size() > 0 && args.get(0).equalsIgnoreCase("text")){
+                    meta.setLore(null);
+                }else{
+                    meta.setDisplayName(null);
+                    meta.setLore(null);
+                }
             }else{
                 if (args.size() <= 0){
                     Util.message(sender, "&cパラメータが足りません！"); return;
