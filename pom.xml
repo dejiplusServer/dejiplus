@@ -216,14 +216,14 @@
       <dependency>
           <groupId>org.bukkit</groupId>
           <artifactId>bukkit</artifactId>
-          <version>1.4.6-R0.1-SNAPSHOT</version>
+          <version>1.4.6-R0.2-SNAPSHOT</version>
           <scope>compile</scope>
       </dependency>
       <!-- SakuraUtils Dependency -->
       <dependency>
           <groupId>net.syamn</groupId>
-          <artifactId>syamn-lib</artifactId>
-          <version>1.0.1</version>
+          <artifactId>SakuraLib</artifactId>
+          <version>1.4.6-0.1</version>
       </dependency>
   </dependencies>
 
