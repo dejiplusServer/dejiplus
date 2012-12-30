@@ -59,6 +59,7 @@ public class BlockListener implements Listener{
         ItemStack spawner = new ItemStack(block.getType(), 1, type.getTypeId(), block.getData());
         //spawner.setDurability(type.getTypeId());
         block.getWorld().dropItemNaturally(block.getLocation(), spawner);
+        event.setExpToDrop(0); // disabled exp drops
         
         if (config.isDebug()){
             LogUtil.info(event.getPlayer().getName() + " broke " + type.name() + "[" + type.getTypeId() + "] Spawner!");
