@@ -38,11 +38,16 @@ public class PlayerListener implements Listener{
             final String geoMsg = GeoIP.getInstance().getGeoIpString(player, config.getUseSimpleFormatOnJoin());
             final String message = Util.coloring(config.getMessageGeoIP()).replace("%PLAYER%", player.getName().replace("%LOCATION%", geoMsg));
             
-            for (final Player p : Bukkit.getOnlinePlayers()){
-                if (Perms.GEOIP_SEND.has(p)){
-                    Util.message(p, message);
+            plugin.getServer().getScheduler().runTaskLater(plugin, new Runnable(){
+                @Override
+                public void run(){
+                    for (final Player p : Bukkit.getOnlinePlayers()){
+                        if (Perms.GEOIP_SEND.has(p)){
+                            Util.message(p, message);
+                        }
+                    }
                 }
-            }
+            }, 1L);
         }
     }
 }
