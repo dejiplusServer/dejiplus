@@ -2,10 +2,25 @@
 # @author syamn <admin@sakura-server.net>
 # github: https://github.com/dejiplusServer/dejiplus
 
-#==================#
-#   Drop Spawner   #
-#==================#
+#====================#
+#   General Config   #
+#====================#
 NeedsSilkEnchant: false
+
+#==============#
+#   Messages   #
+#==============#
+MessageGeoIP: "&7 %PLAYER% は %LOCATION% から接続しました！"
+
+#==================#
+#   GeoIP Config   #
+#==================#
+UseGeoIP: true
+UseCityDB: false
+UseSimpleFormatOnJoin: false
+DownloadMissingDB: true
+CountryDB: "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz"
+CityDB: "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
 
 #==================#
 #   Debug Config   #

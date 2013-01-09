@@ -15,6 +15,10 @@ public enum Perms {
     // User Permission
     SPAWNER_DROP("user.dropspawner"),
     
+    // GeoIP
+    GEOIP_SEND("geoip.send"),
+    GEOIP_HIDE("geoip.hide"),
+    
     // Admin Permission
     RELOAD("admin.reload"),
     EDIT_ITEM("admin.edititem"),

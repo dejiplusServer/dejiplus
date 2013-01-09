@@ -6,6 +6,7 @@ package net.syamn.dejiplus;
 import java.io.File;
 import java.util.logging.Logger;
 
+import net.syamn.dejiplus.feature.GeoIP;
 import net.syamn.utils.file.FileStructure;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -67,6 +68,11 @@ public class ConfigurationManager {
          * useVault && (plugin.getVault() == null || plugin.getEconomy() ==
          * null)) { plugin.setupVault(); }
          */
+        
+        // setup geoIP
+        if (getUseGeoIP()){
+            new GeoIP(plugin).init();
+        }
     }
 
     /**
@@ -99,9 +105,34 @@ public class ConfigurationManager {
 
     /* ***** Begin Configuration Getters *********************** */
 
-    // Drop spawner
+    // General
     public boolean needsSilkEnchant(){
         return conf.getBoolean("NeedsSilkEnchant", false);
+    }
+   
+    // Messages
+    public String getMessageGeoIP(){
+        return conf.getString("MessageGeoIP", "&7 %PLAYER% は %LOCATION% から接続しました！");
+    }
+    
+    // GeoIP
+    public boolean getUseGeoIP(){
+        return conf.getBoolean("UseGeoIP", true);
+    }
+    public boolean getUseCityDB(){
+        return conf.getBoolean("UseCityDB", false);
+    }
+    public boolean getUseSimpleFormatOnJoin(){
+        return conf.getBoolean("UseSimpleFormatOnJoin", false);
+    }
+    public boolean getDownloadMissingDB(){
+        return conf.getBoolean("DownloadMissingDB", true);
+    }
+    public String getCountryDBurl(){
+        return conf.getString("CountryDB", "http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz");
+    }
+    public String getCityDBurl(){
+        return conf.getString("CityDB", "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz");
     }
     
     // Debug
