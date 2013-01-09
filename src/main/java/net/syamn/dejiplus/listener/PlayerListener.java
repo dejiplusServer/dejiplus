@@ -36,7 +36,7 @@ public class PlayerListener implements Listener{
         
         if (config.getUseGeoIP() && !Perms.GEOIP_HIDE.has(player)){
             final String geoMsg = GeoIP.getInstance().getGeoIpString(player, config.getUseSimpleFormatOnJoin());
-            final String message = Util.coloring(config.getMessageGeoIP()).replace("%PLAYER%", player.getName().replace("%LOCATION%", geoMsg));
+            final String message = Util.coloring(config.getMessageGeoIP()).replace("%PLAYER%", player.getName()).replace("%LOCATION%", geoMsg);
             
             plugin.getServer().getScheduler().runTaskLater(plugin, new Runnable(){
                 @Override
