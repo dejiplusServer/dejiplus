@@ -43,11 +43,11 @@ public class GeoIP {
         }
         instance = null;
     }
-    
+
     private Dejiplus plugin;
     private File database;
     private LookupService ls;
-    
+
     /**
      * コンストラクタ
      * @param plugin
@@ -56,7 +56,7 @@ public class GeoIP {
         instance = this;
         this.plugin = plugin;
     }
-    
+
     /**
      * 初期化
      */
@@ -65,11 +65,11 @@ public class GeoIP {
         if (!parent.exists()){
             parent.mkdirs();
         }
-        
+
         final ConfigurationManager conf = plugin.getConfigs();
         final boolean isCity = conf.getUseCityDB();
         database = new File(parent, (isCity) ? "GeoIPCity.dat" : "GeoIPCountry.dat");
-        
+
         if (!database.exists()){
             if (conf.getDownloadMissingDB()){
                 // auto download db if missing
@@ -83,23 +83,23 @@ public class GeoIP {
                 return;
             }
         }
-        
+
         try{
             ls = new LookupService(database);
         }catch(IOException ex){
             LogUtil.warning("Could not read GeoIP database: " + ex.getMessage());
         }
     }
-    
+
     /**
      * プレイヤーのGeoIPメッセージを返す
      */
     public String getGeoIpString(final InetAddress addr, final boolean simple){
         // Check local/internal address
         if (addr.isSiteLocalAddress() || addr.isLoopbackAddress()){
-            return "L";
+            return "Local";
         }
-        
+
         // Only two-char CountryCode
         if (simple){
             return ls.getCountry(addr).getCode();
@@ -112,18 +112,18 @@ public class GeoIP {
                 final Country country = ls.getCountry(addr);
                 return (country == null) ? null : country.getName();
             }
-            
+
             sb.append(loc.countryName);
-            
+
             final String region = regionName.regionNameByCode(loc.countryCode, loc.region);
             if (region != null){
                 sb.append(", ").append(region);
             }
-            
+
             if (loc.city != null){
                 sb.append(", ").append(loc.city);
             }
-            
+
             return sb.toString();
         }
         // Only country name
@@ -153,8 +153,8 @@ public class GeoIP {
             return null;
         }
     }
-    
-    
+
+
     /**
      * LookupServiceを返す
      * @return
@@ -162,7 +162,7 @@ public class GeoIP {
     public LookupService getLookupService(){
         return this.ls;
     }
-    
+
     /**
      * GeoIPデータベースのダウンロードを行う
      * @param url
@@ -173,25 +173,25 @@ public class GeoIP {
             LogUtil.warning("Could not download GeoIP database! Url is empty!");
             return;
         }
-        
+
         if (!file.getParentFile().exists()){
             file.getParentFile().mkdirs();
         }
-        
+
         InputStream input = null;
         OutputStream output = null;
         try{
             LogUtil.info("Downloading GeoIP databases...: " + file.getName());
-            
+
             final URL dlUrl = new URL(url);
             final URLConnection conn = dlUrl.openConnection();
             conn.setConnectTimeout(10000); // 10 secs timeout
-            
+
             input = conn.getInputStream();
             if (url.endsWith(".gz")){
                 input = new GZIPInputStream(input);
             }
-            
+
             output = new FileOutputStream(file);
             final byte[] buff = new byte[2048];
             int len = input.read(buff);
@@ -199,7 +199,7 @@ public class GeoIP {
                 output.write(buff, 0, len);
                 len = input.read(buff);
             }
-            
+
             input.close();
             output.close();
         }
@@ -217,6 +217,6 @@ public class GeoIP {
                 try{ input.close(); }catch(Exception ignore){}
             }
         }
-        
+
     }
 }
