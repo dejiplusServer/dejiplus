@@ -12,6 +12,7 @@ import net.syamn.dejiplus.command.BaseCommand;
 import net.syamn.dejiplus.command.CommandDejiplus;
 import net.syamn.dejiplus.command.DejiplusCommandHandler;
 import net.syamn.dejiplus.listener.BlockListener;
+import net.syamn.dejiplus.listener.EntityListener;
 import net.syamn.dejiplus.listener.PlayerListener;
 import net.syamn.utils.LogUtil;
 import net.syamn.utils.Metrics;
@@ -87,6 +88,7 @@ public class Dejiplus extends JavaPlugin {
         // Regist Listeners
         pm.registerEvents(new BlockListener(this), this);
         pm.registerEvents(new PlayerListener(this), this);
+        pm.registerEvents(new EntityListener(this), this);
 
         // コマンド登録
         cmdHandler = new DejiplusCommandHandler(this);
