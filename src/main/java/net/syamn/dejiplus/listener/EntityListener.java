@@ -29,33 +29,35 @@ public class EntityListener implements Listener{
         this.plugin = plugin;
         this.config = plugin.getConfigs();
     }
-    
+
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onEntityDeath(final EntityDeathEvent event){
         if (!isCheckEntity(event.getEntity()) || event.getDroppedExp() <= 0){
             return;
         }
-        
+
         final Entity ent = event.getEntity();
         final List<Entity> ents = ent.getNearbyEntities(0.75D, 1.5D, 0.75D);
-        
+
         int i = 0;
         for (final Entity e : ents){
             if (isCheckEntity(e)) i++;
         }
-        
+
         if (i >= 3){
             event.setDroppedExp(0);
             event.getDrops().clear();
             LogUtil.warning("ExpTrap detected! " + StrUtil.getLocationString(ent.getLocation()));
         }
     }
-    
+
     private boolean isCheckEntity(final Entity ent){
         if (ent == null) return false;
         switch (ent.getType()){
             case ZOMBIE:
             case SKELETON:
+            case SPIDER:
+            case BLAZE:
                 return true;
             default:
                 return false;
